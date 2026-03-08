@@ -3,6 +3,7 @@ import sidebar from './sidebar.mts'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: "/projects/tiny-php",
   title: "Tiny PHP",
   description: "A Simple Framework to Build Simple Applications Fast",
   head: [['link', { rel: 'icon', href: '/assets/logo-short.png' }]],
