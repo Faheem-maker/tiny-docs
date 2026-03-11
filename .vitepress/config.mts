@@ -12,7 +12,8 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Docs', link: '/docs/getting-started/installation' },
+      { text: 'Tutorial', link: '/docs/getting-started/installation' },
+      { text: 'API Reference', link: '/api-reference' },
       { text: 'About', link: '/about' },
       { text: 'Gallery', link: '/gallery' },
     ],

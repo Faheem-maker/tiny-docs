@@ -7,5 +7,11 @@ export default [
       { text: 'Views', link: '/docs/getting-started/views' },
       { text: 'Reactivity', link: '/docs/getting-started/reactivity' },
     ]
+  },
+  {
+    text: 'Database',
+    items: [
+      { text: 'Query Builder', link: '/docs/database/query-builder'}
+    ]
   }
 ];

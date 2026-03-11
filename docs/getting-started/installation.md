@@ -40,6 +40,18 @@ If your application is being hosted in a sub-directory, you would need to set th
 BASE_URL=/my-subfolder/
 ```
 
+3. Database Configuration
+
+Modify the `.env` to add database configuration for your database:
+
+```
+DB_HOST=localhost
+DB_PORT=3306
+DB_USERNAME=root
+DB_PASSWORD=
+DB_DATABASE=tiny
+```
+
 ### Environment Based Configuration
 Since many config options are dependant on whether the application is running on your local machine or a production server, these options are defined through `app/.env` file. Any option defined within that file are available through the `env()` method.
 
