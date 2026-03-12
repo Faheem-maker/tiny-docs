@@ -67,6 +67,32 @@ $orders = db()
     ->all();
 ```
 
+You can also use a function to build more advaned groups.
+
+```php
+$orders = db()
+    ->select(['id', 'customer_id', 'amount'])
+    ->from('orders')
+    ->where('customer_id', 3)
+    ->andWhere(function (WhereCommand $builder) {
+        $builder->where('status', 'Shipped')
+            ->orWhere('status', 'Delivered');
+    })
+    ->all();
+```
+
+The above code results in the following SQL query:
+
+```sql
+SELECT id, customer_id, amount
+FROM orders
+WHERE customer_id = 3
+    AND (
+        status = 'Shipped'
+        OR status = 'Delivered'
+    )
+```
+
 ## Update Statements
 Update statements are written by invoking `db->update` method. It takes the table name and the values to update.
 
