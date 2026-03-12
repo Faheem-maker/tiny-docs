@@ -1,6 +1,7 @@
 export default [
   {
     text: 'Getting Started',
+    collapsed: false,
     items: [
       { text: 'Installation', link: '/docs/getting-started/installation' },
       { text: 'Controllers', link: '/docs/getting-started/controllers' },
@@ -10,6 +11,7 @@ export default [
   },
   {
     text: 'Database',
+    collapsed: true,
     items: [
       { text: 'Query Builder', link: '/docs/database/query-builder'}
     ]
