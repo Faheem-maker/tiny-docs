@@ -93,6 +93,20 @@ WHERE customer_id = 3
     )
 ```
 
+## Insert Statements
+Insert statements are written by invoking `db->insert` method. It takes the table name and a list of columns. Unlike update/delete, insert is executed immediately without requiring any further method calls.
+
+```php
+db()->insert('products', [
+    'name' => 'New Product',
+    'price' => 2000
+]);
+```
+
+::: tip
+Do not call `execute` on `insert` result. Calling  insert executes the query automatically.
+:::
+
 ## Update Statements
 Update statements are written by invoking `db->update` method. It takes the table name and the values to update.
 
@@ -114,3 +128,17 @@ db()->update('orders', [
     ->where('order_id', 1)
     ->execute();
 ```
+
+## Delete Statements
+Delete statements are written by invoking `db->delete` method. It takes the table name to use for deletion. You can add additional coneditions and then use `execute` to run the delete.
+
+```php
+db()
+    ->delete('products')
+    ->where('id', 3)
+    ->execute();
+```
+
+::: danger
+Always add a `where` clause before running a delete query.
+:::
