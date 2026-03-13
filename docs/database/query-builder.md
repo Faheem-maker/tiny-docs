@@ -74,7 +74,7 @@ $orders = db()
     ->select(['id', 'customer_id', 'amount'])
     ->from('orders')
     ->where('customer_id', 3)
-    ->andWhere(function (WhereCommand $builder) {
+    ->andWhere(function (WhereClause $builder) {
         $builder->where('status', 'Shipped')
             ->orWhere('status', 'Delivered');
     })
