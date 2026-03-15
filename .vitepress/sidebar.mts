@@ -10,6 +10,13 @@ export default [
     ]
   },
   {
+    text: 'Forms',
+    collapsed: true,
+    items: [
+      { text: 'Models', link: '/docs/forms/models' },
+    ]
+  },
+  {
     text: 'Database',
     collapsed: true,
     items: [
