@@ -20,7 +20,8 @@ export default [
     text: 'Database',
     collapsed: true,
     items: [
-      { text: 'Query Builder', link: '/docs/database/query-builder'}
+      { text: 'Query Builder', link: '/docs/database/query-builder'},
+      { text: 'ORM', link: '/docs/database/orm' },
     ]
   }
 ];
