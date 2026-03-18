@@ -10,6 +10,13 @@ export default [
     ]
   },
   {
+    text: "The Basics",
+    collapsed: true,
+    items: [
+      { text: "Routing", link: "/docs/basics/routing" },
+    ]
+  },
+  {
     text: 'Forms',
     collapsed: true,
     items: [
