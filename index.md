@@ -46,6 +46,6 @@ features:
 Get started with Tiny PHP in seconds.
 
 ```bash
-git clone https://github.com/Faheem-maker/tiny-php
+composer create-project tinyframework/tiny my-app
 cd tiny-php
 php -S localhost:8000

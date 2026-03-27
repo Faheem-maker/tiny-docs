@@ -11,14 +11,14 @@ Tiny is modeled after laravel, but focused to allow minimal configuration and cu
 ## Creating a Tiny Application
 
 ### Installing PHP and Git
-Before creating an application, you need to ensure that your local machine has [PHP](https://www.php.net/downloads.php) and [Git](https://git-scm.com/install/) installed. [Composer](https://getcomposer.org/download/) isn't required, but can be installed to support enhanced package management.
+Before creating an application, you need to ensure that your local machine has [PHP](https://www.php.net/downloads.php) and [Composer](https://getcomposer.org/download/) installed.
 
 ### Creating an Application
-After you have installed PHP and Git, you can clone the directory using this commands:
+After you have installed PHP and Composer, you can create a new project using this commands:
 
 ```bash
-git clone https://github.com/Faheem-maker/tiny-php.git
-cd tiny-php
+composer create-project tinyframework/tiny my-app
+cd my-app
 ```
 Now, you can launch the application using this command
 ```bash
@@ -53,7 +53,7 @@ DB_DATABASE=tiny
 ```
 
 ### Environment Based Configuration
-Since many config options are dependant on whether the application is running on your local machine or a production server, these options are defined through `app/.env` file. Any option defined within that file are available through the `env()` method.
+Since many config options are dependant on whether the application is running on your local machine or a production server, these options are defined through `.env` file. Any option defined within that file are available through the `env()` method.
 
 ## Next Steps
 Now that you have created the application, you be be wondering how to proceed further. We recommend following the "Getting Started" tutorial to build a complete app in under 30 minutes. This should give you the knowledge required to build more advanced apps.
