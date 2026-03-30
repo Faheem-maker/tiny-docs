@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
 import sidebar from './sidebar.mts'
+import apiSidebar from './api-sidebar.mts'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -13,12 +14,15 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Tutorial', link: '/docs/getting-started/installation' },
-      { text: 'API Reference', link: '/api-reference' },
+      { text: 'API Reference', link: '/docs/api-reference/' },
       { text: 'About', link: '/about' },
       { text: 'Gallery', link: '/gallery' },
     ],
 
-    sidebar: sidebar,
+    sidebar: {
+      '/docs/api-reference/': apiSidebar,
+      '/docs/': sidebar
+    },
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/Faheem-maker/tiny-php' }
