@@ -27,5 +27,6 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/Faheem-maker/tiny-php' }
     ]
-  }
+  },
+  srcExclude: ['temp']
 })
