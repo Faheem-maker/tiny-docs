@@ -13,8 +13,8 @@ export default [
         ]
     },
     {
-        "text": "Framework",
-        "collapsed": false,
+        "text": "framework",
+        "collapsed": true,
         "items": [
             {
                 "text": "Application",
@@ -27,8 +27,8 @@ export default [
         ]
     },
     {
-        "text": "Components",
-        "collapsed": false,
+        "text": "framework\\components",
+        "collapsed": true,
         "items": [
             {
                 "text": "Config",
@@ -45,8 +45,8 @@ export default [
         ]
     },
     {
-        "text": "Db",
-        "collapsed": false,
+        "text": "framework\\db",
+        "collapsed": true,
         "items": [
             {
                 "text": "ActiveModel",
@@ -67,8 +67,8 @@ export default [
         ]
     },
     {
-        "text": "Commands",
-        "collapsed": false,
+        "text": "framework\\db\\commands",
+        "collapsed": true,
         "items": [
             {
                 "text": "BaseCommand",
@@ -97,8 +97,8 @@ export default [
         ]
     },
     {
-        "text": "Drivers",
-        "collapsed": false,
+        "text": "framework\\db\\drivers",
+        "collapsed": true,
         "items": [
             {
                 "text": "BaseDriver",
@@ -115,8 +115,26 @@ export default [
         ]
     },
     {
-        "text": "Attributes",
-        "collapsed": false,
+        "text": "framework\\db\\traits",
+        "collapsed": true,
+        "items": [
+            {
+                "text": "HasJoin",
+                "link": "/docs/api-reference/core/framework/db/traits/HasJoin"
+            },
+            {
+                "text": "HasTable",
+                "link": "/docs/api-reference/core/framework/db/traits/HasTable"
+            },
+            {
+                "text": "HasWhere",
+                "link": "/docs/api-reference/core/framework/db/traits/HasWhere"
+            }
+        ]
+    },
+    {
+        "text": "framework\\models\\attributes",
+        "collapsed": true,
         "items": [
             {
                 "text": "Between",
@@ -153,8 +171,18 @@ export default [
         ]
     },
     {
-        "text": "Models",
-        "collapsed": false,
+        "text": "framework\\models\\interfaces",
+        "collapsed": true,
+        "items": [
+            {
+                "text": "BeforeSave",
+                "link": "/docs/api-reference/core/framework/models/interfaces/BeforeSave"
+            }
+        ]
+    },
+    {
+        "text": "framework\\models",
+        "collapsed": true,
         "items": [
             {
                 "text": "Model",
@@ -163,8 +191,8 @@ export default [
         ]
     },
     {
-        "text": "Utils",
-        "collapsed": false,
+        "text": "framework\\utils",
+        "collapsed": true,
         "items": [
             {
                 "text": "ConfigContainer",
@@ -177,8 +205,8 @@ export default [
         ]
     },
     {
-        "text": "Helpers",
-        "collapsed": false,
+        "text": "framework\\utils\\helpers",
+        "collapsed": true,
         "items": [
             {
                 "text": "DirectoryHelper",

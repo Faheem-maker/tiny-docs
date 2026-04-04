@@ -4,36 +4,63 @@ $packages = [
     'tinyframework/core' => 'core'
 ];
 
+$github = $github ?? [
+    'tinyframework/core' => 'https://github.com/Faheem-maker/tiny-php-core'
+];
+
+$allClassesInfo = [];
+$subclassesMap = [];
+
 $workingDir = __DIR__ . '/../temp';
 $docsDir = __DIR__ . '/../docs/api-reference';
 
+// 1. Scan all packages for classes
 foreach ($packages as $packageName => $folderName) {
-    echo "Processing $packageName...\n";
-
+    echo "Scanning $packageName...\n";
     $packagePath = "$workingDir/$folderName";
-
-    // 2. Load autoloader
     $autoloader = "$packagePath/vendor/autoload.php";
-    if (!file_exists($autoloader)) {
-        echo "Error: Autoloader not found for $packageName\n";
-        continue;
-    }
-    require_once $autoloader;
-
-    $srcPath = "$packagePath/src";
-    if (!is_dir($srcPath)) {
-        // Try 'lib' if 'src' doesn't exist
-        $srcPath = "$packagePath/lib";
+    if (file_exists($autoloader)) {
+        require_once $autoloader;
     }
 
-    if (!is_dir($srcPath)) {
-        echo "Error: Source directory not found for $packageName\n";
+    $srcPath = is_dir("$packagePath/src") ? "$packagePath/src" : (is_dir("$packagePath/lib") ? "$packagePath/lib" : null);
+    if (!$srcPath)
         continue;
-    }
 
     $files = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($srcPath));
     $phpFiles = new RegexIterator($files, '/\.php$/');
 
+    foreach ($phpFiles as $file) {
+        $className = getClassNameFromFile($file->getRealPath());
+        if ($className && (class_exists($className) || interface_exists($className) || trait_exists($className))) {
+            $allClassesInfo[$className] = [
+                'packageName' => $packageName,
+                'folderName' => $folderName,
+                'filePath' => $file->getRealPath(),
+                'packageRoot' => realpath($packagePath)
+            ];
+        }
+    }
+}
+
+// 2. Build hierarchy
+foreach ($allClassesInfo as $className => $info) {
+    try {
+        $reflection = new ReflectionClass($className);
+        $parent = $reflection->getParentClass();
+        if ($parent) {
+            $subclassesMap[$parent->getName()][] = $className;
+        }
+        foreach ($reflection->getInterfaceNames() as $interface) {
+            $subclassesMap[$interface][] = $className;
+        }
+    } catch (Throwable $e) {
+    }
+}
+
+// 3. Generate Docs
+foreach ($packages as $packageName => $folderName) {
+    echo "Processing $packageName...\n";
     $packageDocsDir = "$docsDir/$folderName";
     if (!is_dir($packageDocsDir)) {
         mkdir($packageDocsDir, 0777, true);
@@ -41,25 +68,23 @@ foreach ($packages as $packageName => $folderName) {
 
     $classList = [];
 
-    foreach ($phpFiles as $file) {
-        $filePath = $file->getRealPath();
-        $className = getClassNameFromFile($filePath);
+    foreach ($allClassesInfo as $className => $info) {
+        if ($info['packageName'] !== $packageName)
+            continue;
 
-        if ($className && class_exists($className)) {
-            echo "Documenting $className...\n";
-            $md = generateClassMarkdown($className);
-            $relativeName = str_replace('\\', '/', $className);
-            $targetPath = "$packageDocsDir/$relativeName.md";
-            $targetDir = dirname($targetPath);
-            if (!is_dir($targetDir)) {
-                mkdir($targetDir, 0777, true);
-            }
-            file_put_contents($targetPath, $md);
-            $classList[] = [
-                'name' => $className,
-                'link' => "/docs/api-reference/$folderName/$relativeName"
-            ];
+        echo "Documenting $className...\n";
+        $md = generateClassMarkdown($className, $subclassesMap, $allClassesInfo, $github);
+        $relativeName = str_replace('\\', '/', $className);
+        $targetPath = "$packageDocsDir/$relativeName.md";
+        $targetDir = dirname($targetPath);
+        if (!is_dir($targetDir)) {
+            mkdir($targetDir, 0777, true);
         }
+        file_put_contents($targetPath, $md);
+        $classList[] = [
+            'name' => $className,
+            'link' => "/docs/api-reference/$folderName/$relativeName"
+        ];
     }
 
     // Generate index for this package
@@ -85,7 +110,7 @@ foreach ($packages as $packageName => $folderName) {
     // Collect all classes for this package
     $packagePath = __DIR__ . "/../docs/api-reference/$folderName";
     $groups = [];
-    
+
     // Add package index
     $sidebarData[0]['items'][] = ['text' => $packageName, 'link' => "/docs/api-reference/$folderName/index"];
 
@@ -96,14 +121,15 @@ foreach ($packages as $packageName => $folderName) {
             $relativePath = str_replace(realpath($packagePath) . DIRECTORY_SEPARATOR, '', $file->getRealPath());
             $relativePath = str_replace('\\', '/', $relativePath);
             $cleanPath = str_replace('.md', '', $relativePath);
-            
-            // Extract group name from path (e.g. "framework/db/QueryBuilder" -> "db")
+
+            // Extract group name from path (e.g. "framework/db/QueryBuilder" -> "framework/db")
             $parts = explode('/', $cleanPath);
-            $groupName = count($parts) > 1 ? ucfirst($parts[count($parts) - 2]) : 'General';
-            
-            // Special mapping for common groups
-            if ($groupName === 'framework') $groupName = 'Core';
-            
+            if (count($parts) > 1) {
+                $groupName = implode('\\', array_slice($parts, 0, -1));
+            } else {
+                $groupName = 'General';
+            }
+
             $groups[$groupName][] = [
                 'text' => basename($cleanPath),
                 'link' => "/docs/api-reference/$folderName/$cleanPath"
@@ -115,7 +141,7 @@ foreach ($packages as $packageName => $folderName) {
         sort($items);
         $sidebarData[] = [
             'text' => $groupName,
-            'collapsed' => false,
+            'collapsed' => true,
             'items' => $items
         ];
     }
@@ -148,9 +174,10 @@ function getClassNameFromFile($path)
 /**
  * Generate Markdown for a class using Reflection
  */
-function generateClassMarkdown($className)
+function generateClassMarkdown($className, $subclassesMap = [], $allClassesInfo = [], $githubMap = [])
 {
     $reflection = new ReflectionClass($className);
+    $info = $allClassesInfo[$className] ?? null;
 
     $type = "Class";
     if ($reflection->isInterface())
@@ -159,6 +186,46 @@ function generateClassMarkdown($className)
         $type = "Trait";
 
     $md = "# $type: $className\n\n";
+
+    // Table of relationships
+    $tableRows = [];
+
+    // Inheritance
+    $parent = $reflection->getParentClass();
+    if ($parent) {
+        $parentName = $parent->getName();
+        $link = getClassLink($parentName, $allClassesInfo);
+        $tableRows[] = "| **Inheritance** | $link |";
+    }
+
+    // Implements
+    $interfaces = $reflection->getInterfaceNames();
+    if (!empty($interfaces)) {
+        $links = array_map(fn($i) => getClassLink($i, $allClassesInfo), $interfaces);
+        $tableRows[] = "| **Implements** | " . implode(', ', $links) . " |";
+    }
+
+    // Subclasses
+    if (isset($subclassesMap[$className])) {
+        $links = array_map(fn($c) => getClassLink($c, $allClassesInfo), $subclassesMap[$className]);
+        $tableRows[] = "| **Subclasses** | " . implode(', ', $links) . " |";
+    }
+
+    // Source Code
+    if ($info && isset($githubMap[$info['packageName']])) {
+        $baseUrl = rtrim($githubMap[$info['packageName']], '/');
+        $relativeFile = str_replace($info['packageRoot'], '', $info['filePath']);
+        $relativeFile = str_replace('\\', '/', $relativeFile);
+        $relativeFile = ltrim($relativeFile, '/');
+        $sourceUrl = "$baseUrl/blob/main/$relativeFile";
+        $tableRows[] = "| **Source Code** | [$sourceUrl]($sourceUrl) |";
+    }
+
+    if (!empty($tableRows)) {
+        $md .= "| Property | Value |\n";
+        $md .= "| --- | --- |\n";
+        $md .= implode("\n", $tableRows) . "\n\n";
+    }
 
     // Description (simple docblock parse)
     $doc = $reflection->getDocComment();
@@ -207,9 +274,6 @@ function generateClassMarkdown($className)
     return $md;
 }
 
-/**
- * Clean doc comments (minimal)
- */
 function cleanDocComment($doc)
 {
     $lines = explode("\n", $doc);
@@ -224,4 +288,17 @@ function cleanDocComment($doc)
         $cleaned[] = $line;
     }
     return trim(implode("\n", $cleaned));
+}
+
+/**
+ * Helper to get a markdown link for a class
+ */
+function getClassLink($name, $allClassesInfo)
+{
+    if (isset($allClassesInfo[$name])) {
+        $info = $allClassesInfo[$name];
+        $relativeName = str_replace('\\', '/', $name);
+        return "[$name](/docs/api-reference/{$info['folderName']}/$relativeName)";
+    }
+    return "`$name`";
 }

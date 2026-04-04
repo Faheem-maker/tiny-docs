@@ -11,6 +11,10 @@ $packages = [
     'tinyframework/core' => 'core'
 ];
 
+$github = [
+    'tinyframework/core' => 'https://github.com/Faheem-maker/tiny-php-core'
+];
+
 $workingDir = __DIR__ . '/../temp';
 $docsDir = __DIR__ . '/../api-reference';
 
