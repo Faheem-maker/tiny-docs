@@ -15,6 +15,7 @@ export default [
     items: [
       { text: "Routing", link: "/docs/basics/routing" },
       { text: "Security", link: "/docs/basics/security" },
+      { text: "Request", link: "/docs/basics/request" }
     ]
   },
   {
@@ -28,7 +29,7 @@ export default [
     text: 'Database',
     collapsed: true,
     items: [
-      { text: 'Query Builder', link: '/docs/database/query-builder'},
+      { text: 'Query Builder', link: '/docs/database/query-builder' },
       { text: 'ORM', link: '/docs/database/orm' },
     ]
   }
