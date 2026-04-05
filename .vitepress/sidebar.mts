@@ -1,5 +1,13 @@
 export default [
   {
+    text: 'Prologue',
+    collapsed: true,
+    items: [
+      { text: 'Introduction', link: '/docs/prologue/introduction' },
+      { text: 'Release Notes', link: '/docs/prologue/release-notes' },
+    ]
+  },
+  {
     text: 'Getting Started',
     collapsed: false,
     items: [

@@ -1,0 +1,57 @@
+# Release Notes
+
+[[toc]]
+
+## Release Cycle
+Tiny PHP is built with several differnet packages, each of which might have a different version. With each release, you can find the latest versions available at that time.
+
+Tiny PHP follows a weekly release cycle, with major releases being published around once a month.
+
+## Recent Relases
+::: info
+Later items appear on top
+:::
+
+### v1.0.1 (2026-04-05)
+
+#### Internal Versions
+
+| Package                   | Version |
+| ------------------------- | ------- |
+| `tinyframework\contracts` | 1.0.2.1 |
+| `tinyframework\core`      | 1.1.1.4 |
+| `tinyframework\web`       | 1.0.1.1 |
+| `tinyframework\console`   | 1.0.0.0 |
+| `tinyframework\tiny`      | 1.1.1.0 |
+
+#### Changes
+- Made `\framework\components\Logger::$logger` public to allow changing the logger driver
+- Improved developer experience by type-hinting components in `Application` and `WebApplication`
+- Simplified dependencies by removing unused and redundant libraries (e.g., child packages now handled by parent packages)
+
+#### Fixes
+- Corrected `@root` path resolution in `PathManager` so directives like `@root` work as expected
+- Fixed request handling in `\framework\web\request\Request` where GET incorrectly took precedence over POST
+- Resolved namespace issues in `WidgetManager` and related components
+
+#### Additions
+- Added `\framework\components\FileSystem` component
+- Introduced test coverage for all core components
+
+#### Notes
+The release fixes most of the prevelant issues. However, a few versions can be expected before the framework is considered stable.
+
+### v1.0.0 (2026-03-29)
+
+#### Internal Versions
+
+| Package                   | Version |
+| ------------------------- | ------- |
+| `tinyframework\contracts` | 1.0.2.0 |
+| `tinyframework\core`      | 1.1.1.3 |
+| `tinyframework\web`       | 1.0.1.0 |
+| `tinyframework\console`   | 1.0.0.0 |
+| `tinyframework\tiny`      | 1.1.0.0 |
+
+#### Notes
+This release marks the first official release available on composer. The release is not ready for production and should only be used for toy projects.
