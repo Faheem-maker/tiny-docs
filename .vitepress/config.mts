@@ -17,6 +17,7 @@ export default defineConfig({
       { text: 'API Reference', link: '/docs/api-reference/' },
       { text: 'About', link: '/about' },
       { text: 'Gallery', link: '/gallery' },
+      { text: 'Blog', link: '/blog/' },
     ],
 
     sidebar: {

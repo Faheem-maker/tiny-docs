@@ -35,6 +35,14 @@ export default [
                 "link": "/docs/api-reference/core/framework/components/Config"
             },
             {
+                "text": "FileSystem",
+                "link": "/docs/api-reference/core/framework/components/FileSystem"
+            },
+            {
+                "text": "Logger",
+                "link": "/docs/api-reference/core/framework/components/Logger"
+            },
+            {
                 "text": "PathManager",
                 "link": "/docs/api-reference/core/framework/components/PathManager"
             },
