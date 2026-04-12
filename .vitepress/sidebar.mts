@@ -31,6 +31,7 @@ export default [
     collapsed: true,
     items: [
       { text: 'Models', link: '/docs/forms/models' },
+      { text: 'File Handling', link: '/docs/forms/file-handling' }
     ]
   },
   {
