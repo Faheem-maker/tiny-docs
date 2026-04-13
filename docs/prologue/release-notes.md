@@ -12,9 +12,42 @@ Tiny PHP follows a weekly release cycle, with major releases being published aro
 Later items appear on top
 :::
 
+### v1.0.2 (2026-04-05)
+
+[Read the Release Notes](/blog/v1.0.2-release.md)
+
+<details>
+<summary>Internal Versions</summary>
+
+| Package                   | Version |
+| ------------------------- | ------- |
+| `tinyframework\contracts` | 1.0.2.1 |
+| `tinyframework\core`      | 1.1.1.5 |
+| `tinyframework\web`       | 1.0.1.4 |
+| `tinyframework\console`   | 1.0.1.2 |
+| `tinyframework\tiny`      | 1.1.2.2 |
+
+</details>
+
+### Changes
+- You can now pass multiple parameters to `ActiveModel::from`
+- DateTime handling for database now uses transformers
+- `UrlManager::named` now returns a full URL
+- `.env` will now be auto-copied instead of requiring manual intervention.
+
+### Fixes
+- Fixed a bug that prevented us from setting values on ActiveModel
+- Fixed namespace in table & form widgets
+
+### Additions
+- Added transformers for extending `ActiveModel` with custom types
+- Added `--rest` flag for REST controller generation
+- Added `params` to `named` & `to` methods for URL generation with auto-parameterization
+
 ### v1.0.1 (2026-04-05)
 
-#### Internal Versions
+<details>
+<summary>Internal Versions</summary>
 
 | Package                   | Version |
 | ------------------------- | ------- |
@@ -23,6 +56,8 @@ Later items appear on top
 | `tinyframework\web`       | 1.0.1.1 |
 | `tinyframework\console`   | 1.0.0.0 |
 | `tinyframework\tiny`      | 1.1.1.0 |
+
+</details>
 
 #### Changes
 - Made `\framework\components\Logger::$logger` public to allow changing the logger driver
@@ -43,7 +78,8 @@ The release fixes most of the prevelant issues. However, a few versions can be e
 
 ### v1.0.0 (2026-03-29)
 
-#### Internal Versions
+<details>
+<summary>Internal Versions</summary>
 
 | Package                   | Version |
 | ------------------------- | ------- |
@@ -52,6 +88,8 @@ The release fixes most of the prevelant issues. However, a few versions can be e
 | `tinyframework\web`       | 1.0.1.0 |
 | `tinyframework\console`   | 1.0.0.0 |
 | `tinyframework\tiny`      | 1.1.0.0 |
+
+</details>
 
 #### Notes
 This release marks the first official release available on composer. The release is not ready for production and should only be used for toy projects.
