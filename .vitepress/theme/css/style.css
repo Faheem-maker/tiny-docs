@@ -1,0 +1,7 @@
+details {
+  margin: 1em 0;
+}
+summary {
+  cursor: pointer;
+  font-weight: bold;
+}
