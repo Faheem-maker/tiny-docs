@@ -8,11 +8,13 @@
  */
 
 $packages = [
-    'tinyframework/core' => 'core'
+    'tinyframework/core' => 'core',
+    'tinyframework/web-app' => 'web',
 ];
 
 $github = [
-    'tinyframework/core' => 'https://github.com/Faheem-maker/tiny-php-core'
+    'tinyframework/core' => 'https://github.com/Faheem-maker/tiny-php-core',
+    'tinyframework/web-app' => 'https://github.com/Faheem-maker/tiny-php-web',
 ];
 
 $workingDir = __DIR__ . '/../temp';
