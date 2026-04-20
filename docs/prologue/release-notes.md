@@ -12,6 +12,31 @@ Tiny PHP follows a weekly release cycle, with major releases being published aro
 Later items appear on top
 :::
 
+### v1.0.3 (2026-04-20)
+
+[Read the Release Notes](/blog/v1.0.3-release.md)
+
+<details>
+<summary>Internal Versions</summary>
+
+| Package                   | Version |
+| ------------------------- | ------- |
+| `tinyframework\contracts` | 1.0.2.1 |
+| `tinyframework\core`      | 1.1.1.6 |
+| `tinyframework\web`       | 1.0.1.5 |
+| `tinyframework\console`   | 1.0.1.3 |
+| `tinyframework\tiny`      | 1.1.2.2 |
+
+</details>
+
+### Fixes
+- Fixed a bug where unnamed routes weren't being created
+
+### Additions
+- Added support for migrations
+- Added `Image`, `Size` and `Extension` validators
+- Added `transaction` and `orderBy` methods to database
+
 ### v1.0.2 (2026-04-05)
 
 [Read the Release Notes](/blog/v1.0.2-release.md)
