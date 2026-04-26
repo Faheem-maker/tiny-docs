@@ -41,5 +41,12 @@ export default [
       { text: 'Query Builder', link: '/docs/database/query-builder' },
       { text: 'ORM', link: '/docs/database/orm' },
     ]
+  },
+  {
+    text: 'Blaze Templating Engine',
+    collapsed: true,
+    items: [
+      { text: 'Introduction', link: '/docs/blaze/introduction' }
+    ]
   }
 ];
