@@ -12,6 +12,49 @@ Tiny PHP follows a weekly release cycle, with major releases being published aro
 Later items appear on top
 :::
 
+### v1.0.4 (2026-05-02)
+
+[Read the Release Notes](/blog/v1.0.4-release.md)
+
+<details>
+<summary>Internal Versions</summary>
+
+| Package                   | Version |
+| ------------------------- | ------- |
+| `tinyframework\contracts` | 1.0.2   |
+| `tinyframework\core`      | 1.1.3   |
+| `tinyframework\web`       | 1.0.3   |
+| `tinyframework\console`   | 1.0.2   |
+| `tinyframework\tiny`      | 1.1.3   |
+
+::: info
+From this release, the versions will use 3 version numbers instead of 4
+:::
+
+</details>
+
+### Fixes
+
+* Fixed table existence check for SQLite driver
+* Fixed duplicate component initialization bug
+* Fixed ORM issue where data couldn’t be selected
+* Fixed incorrect return type (array instead of object)
+* Fixed path resolution issues on Linux
+* Fixed nested parenthesis handling in `@if` directive
+* Fixed handling of empty values in widget parameters
+* Fixed route naming outside of groups
+
+### Additions
+
+* Added `Response::file()` for correct MIME type file responses
+* Added `migration:rollback` command to revert migrations
+
+### Changes
+
+* Improved test coverage
+* Modified `Model::fill` to ignore empty values
+* Changed `serve` to start in the `public` directory
+
 ### v1.0.3 (2026-04-20)
 
 [Read the Release Notes](/blog/v1.0.3-release.md)
