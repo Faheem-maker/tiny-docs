@@ -3,3 +3,4 @@ node_modules/**
 .vitepress/dist/**
 temp/**
 docs/api-reference/**
+!docs/api-reference/index.md
