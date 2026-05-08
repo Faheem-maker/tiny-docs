@@ -41,4 +41,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: .vitepress/dist/       # or build/ for CRA
-          server-dir: /htdocs/projects/tiny-php/
+          server-dir: /htdocs/projects/bolt-php/
