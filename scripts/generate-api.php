@@ -1,20 +1,20 @@
 <?php
 
 /**
- * API Reference Generator for Tiny PHP
+ * API Reference Generator for Bolt PHP
  * 
  * This script downloads Composer packages and generates minimal Markdown
  * documentation for their public API.
  */
 
 $packages = [
-    'tinyframework/core' => 'core',
-    'tinyframework/web-app' => 'web',
+    'bolt-php/core' => 'core',
+    'bolt-php/web' => 'web',
 ];
 
 $github = [
-    'tinyframework/core' => 'https://github.com/Faheem-maker/tiny-php-core',
-    'tinyframework/web-app' => 'https://github.com/Faheem-maker/tiny-php-web',
+    'bolt-php/core' => 'https://github.com/bolt-php/core',
+    'bolt-php/web' => 'https://github.com/bolt-php/web',
 ];
 
 $workingDir = __DIR__ . '/../temp';

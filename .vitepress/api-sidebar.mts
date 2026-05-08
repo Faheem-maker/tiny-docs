@@ -9,6 +9,10 @@ export default [
             {
                 "text": "tinyframework/core",
                 "link": "/docs/api-reference/core/index"
+            },
+            {
+                "text": "tinyframework/web-app",
+                "link": "/docs/api-reference/web/index"
             }
         ]
     },
@@ -223,6 +227,134 @@ export default [
             {
                 "text": "DotenvHelper",
                 "link": "/docs/api-reference/core/framework/utils/helpers/DotenvHelper"
+            }
+        ]
+    },
+    {
+        "text": "framework\\web\\blaze\\interfaces",
+        "collapsed": true,
+        "items": [
+            {
+                "text": "RootContext",
+                "link": "/docs/api-reference/web/framework/web/blaze/interfaces/RootContext"
+            }
+        ]
+    },
+    {
+        "text": "framework\\web\\components",
+        "collapsed": true,
+        "items": [
+            {
+                "text": "ErrorHandler",
+                "link": "/docs/api-reference/web/framework/web/components/ErrorHandler"
+            },
+            {
+                "text": "Session",
+                "link": "/docs/api-reference/web/framework/web/components/Session"
+            },
+            {
+                "text": "UrlManager",
+                "link": "/docs/api-reference/web/framework/web/components/UrlManager"
+            },
+            {
+                "text": "WidgetManager",
+                "link": "/docs/api-reference/web/framework/web/components/WidgetManager"
+            }
+        ]
+    },
+    {
+        "text": "framework\\web\\exceptions",
+        "collapsed": true,
+        "items": [
+            {
+                "text": "HttpException",
+                "link": "/docs/api-reference/web/framework/web/exceptions/HttpException"
+            },
+            {
+                "text": "NotFoundException",
+                "link": "/docs/api-reference/web/framework/web/exceptions/NotFoundException"
+            }
+        ]
+    },
+    {
+        "text": "framework\\web\\request",
+        "collapsed": true,
+        "items": [
+            {
+                "text": "Response",
+                "link": "/docs/api-reference/web/framework/web/request/Response"
+            },
+            {
+                "text": "UploadedFile",
+                "link": "/docs/api-reference/web/framework/web/request/UploadedFile"
+            }
+        ]
+    },
+    {
+        "text": "framework\\web\\response",
+        "collapsed": true,
+        "items": [
+            {
+                "text": "ViewResponse",
+                "link": "/docs/api-reference/web/framework/web/response/ViewResponse"
+            }
+        ]
+    },
+    {
+        "text": "framework\\web",
+        "collapsed": true,
+        "items": [
+            {
+                "text": "Route",
+                "link": "/docs/api-reference/web/framework/web/Route"
+            },
+            {
+                "text": "RouteGroup",
+                "link": "/docs/api-reference/web/framework/web/RouteGroup"
+            },
+            {
+                "text": "Routes",
+                "link": "/docs/api-reference/web/framework/web/Routes"
+            }
+        ]
+    },
+    {
+        "text": "framework\\web\\routing",
+        "collapsed": true,
+        "items": [
+            {
+                "text": "Router",
+                "link": "/docs/api-reference/web/framework/web/routing/Router"
+            }
+        ]
+    },
+    {
+        "text": "framework\\web\\transformers",
+        "collapsed": true,
+        "items": [
+            {
+                "text": "UploadedFileTransformer",
+                "link": "/docs/api-reference/web/framework/web/transformers/UploadedFileTransformer"
+            }
+        ]
+    },
+    {
+        "text": "framework\\web\\utils\\security",
+        "collapsed": true,
+        "items": [
+            {
+                "text": "Csrf",
+                "link": "/docs/api-reference/web/framework/web/utils/security/Csrf"
+            }
+        ]
+    },
+    {
+        "text": "framework\\web\\widgets",
+        "collapsed": true,
+        "items": [
+            {
+                "text": "Widget",
+                "link": "/docs/api-reference/web/framework/web/widgets/Widget"
             }
         ]
     }

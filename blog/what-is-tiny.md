@@ -2,19 +2,19 @@
 layout: doc
 sidebar: false
 aside: false
-title: What is Tiny PHP?
-description: Learn about Tiny PHP and how it works.
+title: What is Bolt PHP?
+description: Learn about Bolt PHP and how it works.
 date: 2026-04-12
 ---
 
-# What is Tiny PHP?
+# What is Bolt PHP?
 
 Here's a common scenario, you are building a new app and you need a simple api for your app. You can use laravel for that but it's too heavy for a simple api. So you decide to use a micro framework like slim or lumen. But then you realize that you need a simple way to handle authentication, logging, and other common tasks. So you start adding packages to your micro framework. And before you know it, you have a full-blown framework with hundreds of dependencies and complex configuration files. 
 
 > 90% of the time, you need to build generic, simple apps that reuse the same features you have implemented hundrends of times before.
 
-## Meet Tiny PHP
-I made Tiny PHP as a solution to this problem. It is a simple, lightweight framework that is easy to use and understand. It abstracts away the reusable parts of the application, so you can focus on declaring intents, while Tiny PHP handles the rest.
+## Meet Bolt PHP
+I made Bolt PHP as a solution to this problem. It is a simple, lightweight framework that is easy to use and understand. It abstracts away the reusable parts of the application, so you can focus on declaring intents, while Bolt PHP handles the rest.
 
 ## File Uploading Example
 Let's take a simple example, you are trying to make a CRUD for a product system, and you want to allow uploading images for each product. With laravel, you will do something like this:
@@ -36,7 +36,7 @@ public function store(Request $request)
 }
 ```
 
-With Tiny PHP, you will do this:
+With Bolt PHP, you will do this:
 
 ```php
 // models/Product.php
@@ -50,7 +50,7 @@ public function store(Request $request)
 }
 ```
 
-You don't need to worry about where and how to store your images, you simply need to know how to reterive and protect them, and this is exactly where Tiny excels at.
+You don't need to worry about where and how to store your images, you simply need to know how to reterive and protect them, and this is exactly where Bolt excels at.
 
 ## Roadmap
 

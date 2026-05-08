@@ -29,7 +29,7 @@ code: `<main class="container">
   <h1>{{ $message }}</h1>
 
   <p>
-    Welcome to your Tiny PHP application.
+    Welcome to your Bolt PHP application.
   </p>
 </main>`
 }

@@ -3,7 +3,7 @@
 [[toc]]
 
 ## Introduction
-Tiny PHP comes pre-built with a templating engine called blaze. It uses `.html.php` file extensions and providers several helper methods to simplify building layouts with PHP.
+Bolt PHP comes pre-built with a templating engine called blaze. It uses `.html.php` file extensions and providers several helper methods to simplify building layouts with PHP.
 
 Blaze supports layout inheritence, parameter sharing and multiple directives. It doesn't yet support partial views and sections.
 

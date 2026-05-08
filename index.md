@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: "Tiny PHP"
+  name: "Bolt PHP"
   text: "A Minimal PHP Framework"
   tagline: Build simple applications, fast.
 
@@ -13,28 +13,16 @@ hero:
 
     - theme: alt
       text: GitHub
-      link: https://github.com/your-org/tiny-php
+      link: https://github.com/bolt-php/bolt
 
 features:
   - icon: ⚡
     title: Extremely Fast
-    details: Tiny PHP is designed with minimal overhead so your applications stay fast and responsive.
-
-  - icon: 🧩
-    title: Minimal Core
-    details: Only the essentials are included. Add what you need without carrying unnecessary dependencies.
+    details: Bolt PHP is designed with minimal overhead so your applications stay fast and responsive.
 
   - icon: 🧠
     title: Easy to Understand
-    details: Clean architecture and simple structure make Tiny PHP perfect for learning and rapid development.
-
-  - icon: 🔌
-    title: Extendable
-    details: Plug in your own components, routers, or templating systems.
-
-  - icon: 🪶
-    title: Lightweight
-    details: The framework footprint is extremely small compared to traditional PHP frameworks.
+    details: Clean architecture and simple structure make Bolt PHP perfect for learning and rapid development.
 
   - icon: 📚
     title: Developer Friendly
@@ -43,9 +31,9 @@ features:
 
 ## Quick Installation
 
-Get started with Tiny PHP in seconds.
+Get started with Bolt PHP in seconds.
 
 ```bash
-composer create-project tinyframework/tiny my-app
-cd tiny-php
+composer create-project bolt-php/bolt my-app
+cd my-app
 php -S localhost:8000

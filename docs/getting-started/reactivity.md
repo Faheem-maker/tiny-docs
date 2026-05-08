@@ -8,7 +8,7 @@ Most applications require some JavaScript to build functionality and support int
 However, managing the DOM manually is redundant and error-prone. We can, instead, rely on tiny to manage that for us.
 
 ### Tiny.js
-Tiny comes packed with `tiny.js`, a reactive library that allows you to write such applications cleanly and in a very maintainable way. It doesn't require a build-step and is included in each project by default.
+Bolt comes packed with `tiny.js`, a reactive library that allows you to write such applications cleanly and in a very maintainable way. It doesn't require a build-step and is included in each project by default.
 
 ## Writing Reactive Views
 Let's modify our view to write it using `tiny.js`. We can rewrite it like this:
@@ -48,7 +48,7 @@ It creates a one-way binding to `innerText` of this element. Whenever `counter.t
 
 
 ### Using `data-controller`
-As your JavaScript expands, it becomes hard to manage it using HTML attributes. Tiny provides a feature called "controllers" to adress this. These controllers are different from PHP controllers and allow you to isolate your business logic and UI.
+As your JavaScript expands, it becomes hard to manage it using HTML attributes. Bolt provides a feature called "controllers" to adress this. These controllers are different from PHP controllers and allow you to isolate your business logic and UI.
 
 Let's convert our code using a controller:
 
@@ -67,7 +67,7 @@ class Counter {
     }
 }
 ```
-This creates a simple class with options to get text's length and clear it. It relies on Tiny's built-in `Ui` library to display a success message.
+This creates a simple class with options to get text's length and clear it. It relies on Bolt's built-in `Ui` library to display a success message.
 
 Let's use it within our view:
 ```html
@@ -75,7 +75,7 @@ Let's use it within our view:
 @{
     // Load our JS file
     app()->assets->addScript('js/counter.js');
-    // Load tiny's UI library to access toast
+    // Load Bolt's UI library to access toast
     app()->assets->addScript('js/ui/toast.js');
 }
 
@@ -108,4 +108,4 @@ In order to use a controller, we use the `data-controller` attribute, and provid
 
 * `data-onclick="counter.clear()"`
 
-`data-on` syntax is used to attach event listeners. Tiny attaches an event listener to your button, and when it's clicked, calls the `counter.clear` method. Within that method, we are calling `this.text = ""`, clearing the text, and updating the text area / word count automatically.
+`data-on` syntax is used to attach event listeners. Bolt attaches an event listener to your button, and when it's clicked, calls the `counter.clear` method. Within that method, we are calling `this.text = ""`, clearing the text, and updating the text area / word count automatically.

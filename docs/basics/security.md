@@ -3,7 +3,7 @@
 [[toc]]
 
 ## Introduction
-While you must follow best practices to ensure that your app remains secure, Tiny comes with several powerful features to ensure basic security by default. This document covers many features packaged within Tiny to protect against common attack vectors.
+While you must follow best practices to ensure that your app remains secure, Bolt comes with several powerful features to ensure basic security by default. This document covers many features packaged within Bolt to protect against common attack vectors.
 
 ## XSS Injection
 Consider that you have allowed the user to enter description for a product. They enter the following within description:
@@ -18,7 +18,7 @@ Product description
 
 If you use `echo` to print the description, it would also render the `script` tag and run the JavaScript. This can significantly impact your site's security.
 
-Tiny automatically protects against this by escaping the output of `{{ }}` directive. If you wish to bypass the escaping, use unsafe echo by appending `!!` after the opening brackets (e.g. <span v-pre>`{{!! $html }}`</span>).
+Bolt automatically protects against this by escaping the output of `{{ }}` directive. If you wish to bypass the escaping, use unsafe echo by appending `!!` after the opening brackets (e.g. <span v-pre>`{{!! $html }}`</span>).
 
 ## CSRF Protection
 CSRF protection prevents other sites from submitting to your forms by requiring a token appended with each form. If you use `ActiveForm` widget, a CSRF token will be appended automatically. However, you can add a token within custom forms by using this syntax:
