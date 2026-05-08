@@ -4,8 +4,8 @@ import apiSidebar from './api-sidebar.mts'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  base: "/projects/tiny-php",
-  title: "Tiny PHP",
+  base: "/projects/bolt-php",
+  title: "Bolt PHP",
   description: "A Simple Framework to Build Simple Applications Fast",
   head: [['link', { rel: 'icon', href: '/assets/logo-short.png' }]],
   themeConfig: {
@@ -26,7 +26,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/Faheem-maker/tiny-php' }
+      { icon: 'github', link: 'https://github.com/bolt-php/bolt' }
     ]
   },
   srcExclude: ['temp']

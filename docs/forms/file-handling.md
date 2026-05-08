@@ -3,7 +3,7 @@
 [[toc]]
 
 ## Introduction
-Most applications need to prompt users for file uploading, whether those are product images, or user avatars. Tiny provides a simple and efficient way to handle file uploads.
+Most applications need to prompt users for file uploading, whether those are product images, or user avatars. Bolt provides a simple and efficient way to handle file uploads.
 
 ## Uploading Files
 In order to upload files, we can use `Forms.FileField` widget. Here's a complete example of a simple form with file upload:

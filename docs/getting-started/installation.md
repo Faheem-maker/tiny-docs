@@ -2,13 +2,13 @@
 
 [[toc]]
 
-## Meet Tiny
-Tiny PHP is a simple, light-weight and self-contained
+## Meet Bolt
+Bolt PHP is a simple, light-weight and self-contained
 PHP framework. It comes with powerful features to help you build small, simple applications fast.
 
-Tiny is modeled after laravel, but focused to allow minimal configuration and customization. This reduces flexiblity, but allows rapid prototyping.
+Bolt is modeled after laravel, but focused to allow minimal configuration and customization. This reduces flexiblity, but allows rapid prototyping.
 
-## Creating a Tiny Application
+## Creating a Bolt Application
 
 ### Installing PHP and Git
 Before creating an application, you need to ensure that your local machine has [PHP](https://www.php.net/downloads.php) and [Composer](https://getcomposer.org/download/) installed.
@@ -17,7 +17,7 @@ Before creating an application, you need to ensure that your local machine has [
 After you have installed PHP and Composer, you can create a new project using this commands:
 
 ```bash
-composer create-project tinyframework/tiny my-app
+composer create-project Boltframework/Bolt my-app
 cd my-app
 ```
 Now, you can launch the application using this command
@@ -49,7 +49,7 @@ DB_HOST=localhost
 DB_PORT=3306
 DB_USERNAME=root
 DB_PASSWORD=
-DB_DATABASE=tiny
+DB_DATABASE=Bolt
 ```
 
 ### Environment Based Configuration

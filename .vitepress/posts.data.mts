@@ -20,7 +20,7 @@ export default createContentLoader('blog/**/*.md', {
       .filter(({ url }) => url !== '/blog/')
       .map(({ url, frontmatter, excerpt }) => ({
         title: frontmatter.title || 'Untitled',
-        url: `/projects/tiny-php${url}`,
+        url: `/projects/bolt-php${url}`,
         excerpt: frontmatter.description || excerpt,
         date: formatDate(frontmatter.date)
       }))

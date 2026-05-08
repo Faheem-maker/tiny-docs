@@ -3,7 +3,7 @@
 [[toc]]
 
 ## Introduction
-Tiny PHP comes with a built-in query builder. Using which, you can write complex queries by using PHP functions.
+Bolt PHP comes with a built-in query builder. Using which, you can write complex queries by using PHP functions.
 
 The query builder is database-agnostic, which means that you can swap the database with another one and all queries will work as expected. It's mostly strongly typed, however, a few areas continue to return `mixed` or `object` types due to language constraints.
 

@@ -23,7 +23,7 @@ class HomeController {
 
 The controller declares a single **action**, that responds by writing **Hello World** to the webpage.
 
-However, we still need to define its route. A route is a way to tell tiny when to use your controller.
+However, we still need to define its route. A route is a way to tell Bolt when to use your controller.
 
 We shall add the following code within `app/config/routes.php`
 

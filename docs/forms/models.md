@@ -3,7 +3,7 @@
 [[toc]]
 
 ## Introduction
-Every web-app needs forms to read and process user data. Tiny provides several powerful features to make building, validating and processing forms easier and faster.
+Every web-app needs forms to read and process user data. Bolt provides several powerful features to make building, validating and processing forms easier and faster.
 
 Models provide a central and consistent way to generate and validate forms.
 
