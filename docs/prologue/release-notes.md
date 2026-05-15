@@ -12,6 +12,37 @@ Bolt PHP follows a weekly release cycle, with major releases being published aro
 Later items appear on top
 :::
 
+### v1.0.5 (2026-05-15)
+
+[Read the Release Notes](/blog/v1.0.5-release.md)
+
+<details>
+<summary>Internal Versions</summary>
+
+| Package                   | Version |
+| ------------------------- | ------- |
+| `bolt-php\contracts` | 1.0.2   |
+| `bolt-php\core`      | 1.1.3   |
+| `bolt-php\web`       | 1.0.4   |
+| `bolt-php\console`   | 1.0.2   |
+| `bolt-php\bolt`      | 1.1.3   |
+
+::: info
+From this release, the rename is officially adapted and older packages are abandoned.
+:::
+
+</details>
+
+### Fixes
+
+* Fixed a bug with duplicate slash due to leading route slash
+* Fixed directory casing for widgets on UNIX
+
+### Changes
+
+* Improved coverage for `web` package
+* Renamed the framework to `bolt-php`
+
 ### v1.0.4 (2026-05-02)
 
 [Read the Release Notes](/blog/v1.0.4-release.md)
